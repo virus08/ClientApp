@@ -16,8 +16,15 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
-    new Vue({ el: '#app' })
+    new Vue({ 
+        el: '#app',
+        data: getUserAccount()
+     })
+    function getUserAccount() {
+        return axios.get('http://localhost:8000/products');
+    }
   </script>
 </body>
 </html>
